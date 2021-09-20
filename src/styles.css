@@ -1,4 +1,20 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  cursor: pointer;
+}
+
+input {
+  font-size: 14px;
+  outline: #fff;
+  padding: 0.6rem 1rem;
+  margin: 1rem;
+  border: 2px solid #7c3aed;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 258px;
+}
+
+span {
+  padding: 0.2rem;
 }

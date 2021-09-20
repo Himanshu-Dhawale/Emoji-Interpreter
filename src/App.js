@@ -65,23 +65,33 @@ var emojiDictionary = {
 
 var emojis = Object.keys(emojiDictionary);
 export default function App() {
-  var [likeCounter, Aloo] = useState("");
+  var [meaning, setMeaning] = useState("");
 
   function emojiHandeler(event) {
     var userInput = event.target.value;
-    var likeCounter = emojiDictionary[userInput];
-    Aloo(likeCounter);
+    var emojiMeaning = emojiDictionary[userInput];
+    if (meaning === undefined) {
+      meaning = "We don't have this in our Database";
+    }
+    setMeaning(emojiMeaning);
   }
+
+  // function inputHandlerEvent(event) {
+  //   var userInput = event.target.value;
+  //   var meaning = emojiDictionary[userInput];
+
+  //   setMeaning(meaning);
+  // }
   function showemojiClickHandler(showemoji) {
-    var likeCounter = emojiDictionary[showemoji];
-    Aloo(likeCounter);
+    var meaning = emojiDictionary[showemoji];
+    setMeaning(meaning);
   }
 
   return (
     <div className="App">
       <h1>EMOJIPEDIA</h1>
       <input onChange={emojiHandeler} />
-      <h2>{likeCounter}</h2>
+      <h2>{meaning}</h2>
       <div>
         <h3>Emojis we Know</h3>
         {emojis.map(function (showemoji) {
